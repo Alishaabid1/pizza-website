@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: orange;
+            padding: 10px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+            margin-top: 10px;
+        }
+
+        header.fixed {
+            position: fixed;
+            top: 0;
+        }
+
+        footer {
+            text-align: center;
+            background-color: orange;
+            margin-top: 100px;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;  
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            transform: rotate(0deg);
+            margin-left: 10px;
+        }
+
+        nav ul li {
+            margin-left: 100px;
+        }
+
+        .a {
+            width: 10px;
+            margin-right: 400px; /* Adjusted distance */
+        }
+
+        .slider {
+            display: flex;
+            animation: slide 10s infinite linear;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+            margin: 0px;
+            height: 500px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translate(-100);
+            }
+            16.66% {
+                transform: translateX(0);
+            }
+            33.33% {
+                transform: translateX(-100%);
+            }
+            50% {
+                transform: translateX(-100%);
+            }
+            66.66% {
+                transform: translateX(-200%);
+            }
+            83.33% {
+                transform: translateX(-200%);
+            }
+            99.99% {
+                transform: translateX(-300%);
+            }
+        }
+
+        .tes {
+            width: 70%;
+            height: auto;
+            margin-left: 30px;
+            margin-top: 30px;
+            display: block;
+            border: 2px solid #ccc;
+            padding: 30px;
+        }
+
+        .testimonials {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .image-container .pizza-image {
+            width: 30%;
+            height: auto;
+            margin-right: 10px;
+            margin-left: 30px;
+            margin-top: 10px;
+            display: block;
+            border: 2px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-container .pizza-image:hover {
+            transform: rotate(360deg);
+        }
+
+        .pizza-specials {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .order-button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .order-button:hover {
+            background-color: darkorange;
+        }
+
+        .form-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .form-section form {
+            width: 50%;
+            margin-top: 20px;
+            align-items: center;
+        }
+
+        .form-section label {
+            margin-bottom: 8px;
+        }
+
+        .form-section input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            margin-left: 10px;
+        }
+
+        .form-section .button-wrapper {
+            display: flex;
+            flex-direction: row;
+            margin-left: 100px;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .form-section button {
+            background-color: green;
+            color: white;
+            margin-left: 100px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .form-section button:hover {
+            background-color: darkorange;
+        }
+
+        .container {
+            position: relative;
+            height: 5px;
+            weigth: 5px;
+            animation: flicker 3ms ease-in infinite alternate;
+        }
+
+        .flame {
+            position: absolute;
+            border-radius: 50px 0 50px 50px;
+            transform: rotate(-45deg) scale(1, 1);
+        }
+
+        .yellow {
+            height: 30px;
+            width: 30px;
+            background: gold;
+            box-shadow: 0 0 5px 3px gold;
+            transform: rotate(0deg);
+        }
+
+        .orange {
+            height: 30px;
+            width: 30px;
+            background: orange;
+            box-shadow: 1px 1px 5px 3px gold;
+            transform: rotate(-50deg);
+            margin: 0px;
+            padding: 5px;
+        }
+
+        .red {
+            height: 40px;
+            width: 40px;
+            background: orangered;
+            box-shadow: 0 0 5px 3px orangered;
+            transform: rotate(-50deg);
+            margin-right: 10px;
+        }
+
+        .white {
+            height: 20px;
+            width: 20px;
+            background: white;
+            margin-left: 5px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+            box-shadow: 0px 0px 5px 3px white;
+            transform: rotate(-50deg);
+        }
+
+        .blue {
+            height: 20px;
+            width: 20px;
+            background: slateblue;
+            box-shadow: 1px 1px 5px 3px slateblue;
+            transform: rotate(-50deg);
+            bottom: -30px;
+            left:  8px;
+            
+        }
+
+        @keyframes flicker {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header id="main-header">
+    <h1>Pizza Delight</h1>
+    <div class="container a">
+        <div class="red flame"></div>
+        <div class="orange flame"></div>
+        <div class="yellow flame"></div>
+        <div class="white flame"></div>
+        <div class="blue flame"></div>
+    </div>
+    <span>
+        <nav>
+            <ul>
+                <li><a href="#testimonials">Menu</a></li>
+                 <li><a href="#pizza-specials">Pizza Specials</a></li>
+                <li><a href="#testimonials">Order now</a></li>
+                <li><a href="#form-section">Contact</a></li>
+            </ul>
+        </nav>
+    </span>
+</header>
+
+<script>
+    // Add a scroll event listener
+    window.addEventListener('scroll', function () {
+        var header = document.getElementById('main-header');
+
+        // Check the scroll position
+        if (window.scrollY > 50) {
+            header.classList.add('fixed');
+        } else {
+            header.classList.remove('fixed');
+        }
+    });
+</script>
+
+
+<section class="slider">
+    <span class="slide">
+        <img src="desktops.jpeg" alt="Slide 1">
+    </span>
+    <span class="slide">
+        <img src="desktops.jpeg" alt="Slide 2">
+    </span>
+    <span class="slide">
+        <img src="desktops.jpeg" alt="Slide 3">
+    </span>
+</section>
+
+<section class="pizza-specials" id= "pizza-specials">
+    <h1>Pizza Specials</h1>
+    <div class="image-container">
+        <div class="pizza-image">
+            <img src="desktops.jpeg" alt="Image 1">
+            <h1>Cheese Pizza</h1>
+        </div>
+        <div class="pizza-image">
+            <img src="desktops.jpeg" alt="Image 2">
+            <h1>Tikka Pizza</h1>
+        </div>
+        <div class="pizza-image">
+            <img src="desktops.jpeg" alt="Image 3">
+            <h1>Kabab Pizza</h1>
+        </div>
+    </div>
+</section>
+
+<section class="pizza-specials">
+    <h1>What our Customers say</h1>
+    <pre>
+        the best pizza is here and I can't get enough of it
+                             alisha abid
+
+        the best pizza is here and I can't get enough of it
+                               aiza ali
+    </pre>
+    <h1>Ready to order?</h1>
+    <p>experience the best taste</p>
+    <button class="order-button">Order Now</button>
+</section>
+
+<section class="testimonials" id= "testimonials">
+    <div class="tes">
+	    <h2>Quality Ingridient </h2>
+        <p>Quality is first pirority .</p>
+    </div>
+    <div class="tes">
+	 <h2>Customization Ingrident </h2>
+        <p>You can customize your pizza like having 4 different flavours</p>
+    </div>
+    <div class="tes">
+	 <h2>Fast Delivery</h2>
+        <p>You will recieve pizza in 30 minutes or you will get free pizza!</p>
+    </div>
+</section>
+
+<section class="form-section" id="form-section">
+    <h1>Contact Us</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <div class="form-section button-wrapper">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+</section>
+
+<footer>
+    <h3>@ 2024 Pizza Delights all rights are reserved</h3>
+</footer>
+
+</body>
+</html>
